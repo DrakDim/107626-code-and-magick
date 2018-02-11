@@ -36,7 +36,7 @@ window.renderStatistics = function (ctx, names, times) {
 
   var drawColum = function (x, y, width, height, color) {
     ctx.fillStyle = color;
-    ctx.fillRect(x, y, wifth, height);
+    ctx.fillRect(x, y, width, height);
     ctx.strokeRect(x, y, width, height);
   };
 
