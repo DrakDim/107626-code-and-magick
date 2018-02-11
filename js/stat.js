@@ -51,7 +51,10 @@ window.renderStatistics = function (ctx, names, times) {
     return maxValue;
   };
 
-  var
+  var randomAlpha = function () {
+    return Math.random() === 0 ? 0.01 : Math.random().toFixed(2);
+  };
+
 
   createRect(SHADOW_X, SHADOW_Y, STAT_WIDTH, STAT_HEIGHT, SHADOW_STAT_COLOR);
   createRect(INITIAL_STAT_X, INITIAL_STAT_Y, STAT_WIDTH, STAT_HEIGHT, STAT_COLOR);
