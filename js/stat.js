@@ -34,6 +34,18 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(text, x, y);
   };
 
+  var searchMaxValue = function (arrayTime) {
+    var maxValue = -1;
+    var minValue = -1;
+    for (var i = 0; i < arrayTime.length; i++) {
+      if (minValue > maxValue) {
+        maxValue = minValue;
+      }
+    }
+    return maxValue;
+  };
+
+
   createRect(SHADOW_X, SHADOW_Y, STAT_WIDTH, STAT_HEIGHT, SHADOW_STAT_COLOR);
   createRect(INITIAL_STAT_X, INITIAL_STAT_Y, STAT_WIDTH, STAT_HEIGHT, STAT_COLOR);
 
