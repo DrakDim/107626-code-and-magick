@@ -17,10 +17,15 @@ window.renderStatistics = function (ctx, names, times) {
   var STAT_WIDTH = 420;
   var STAT_HEIGHT = 270;
 
+  var HISTOGRAM_HRIGHT = 150;
+  var HISTOGRAM_COLUMN_WIDTH = 40;
+  var DISTANCE_BETWEEN_COLUMNS = 50;
+
   var SHADOW_STAT_COLOR = 'rgba(0, 0, 0, 0.7)';
   var STAT_COLOR = 'white';
   var FONT = '16px PT Mono';
   var DEFAULT_TEXT_COLOR = '#000';
+  var WIN_PLAYER_COLOR = 'rgba(255, 0, 0, 1)';
 
 
   var createRect = function (x, y, width, height, color) {
@@ -40,10 +45,10 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.strokeRect(x, y, width, height);
   };
 
-  var searchMaxValue = function (arrayTime) {
+  var searchMaxValue = function (arrayTimes) {
     var maxValue = -1;
     var minValue = -1;
-    for (var i = 0; i < arrayTime.length; i++) {
+    for (var i = 0; i < arrayTimes.length; i++) {
       if (minValue > maxValue) {
         maxValue = minValue;
       }
@@ -51,8 +56,9 @@ window.renderStatistics = function (ctx, names, times) {
     return maxValue;
   };
 
-  var randomAlpha = function () {
-    return Math.random() === 0 ? 0.01 : Math.random().toFixed(2);
+  var randomOtherPlayersColor = function () {
+    var randomAlpha = Math.random() === 0 ? 0.01 : Math.random().toFixed(2);
+    return 'rgba(0, 26, 255, ' + randomAlpha + ')';
   };
 
 
